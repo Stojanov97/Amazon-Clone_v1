@@ -1,5 +1,5 @@
 import useFetch from "./Hooks/useFetch";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { MagnifyingGlassIcon, Bars4Icon } from "@heroicons/react/24/outline";
 import MyLocation from "./Hooks/useLocation";
 
 function App() {
@@ -77,19 +77,39 @@ function App() {
           </div>
         </div>
         {/* bottom part */}
-        <div className="w-max-[1920px] h-[30px] flex  gap-9 text-white overflow-x-scroll    bg-amazon_blue-light">
+        <div className="w-max-[1920px] p-1 flex items-center justify-start gap-7 h-[35px] text-white overflow-x-scroll lg:overflow-hidden flex-shrink-0   bg-amazon_blue-light">
           {/* all */}
-          <div>{/* sandwich icon */}|||</div>
+          <div>
+            <Bars4Icon className="w-5 h-5" />
+          </div>
           {/* categories */}
-          <p>Best Sellers</p>
-          <p>Today's Deals</p>
-          <p>Customer Service</p>
-          <p>New Releases</p>
-          <p>Find a Gift</p>
-          <p>Registry</p>
-          <p>Gift Cards</p>
-          <p>Amazon Basics</p>
-          <p>Sell</p>
+          <div className="whitespace-nowrap">
+            <p>Best Sellers</p>
+          </div>
+          <div className="whitespace-nowrap">
+            <p>Today's Deals</p>
+          </div>
+          <div className="whitespace-nowrap">
+            <p>Customer Service</p>
+          </div>
+          <div className="whitespace-nowrap">
+            <p>New Releases</p>
+          </div>
+          <div className="whitespace-nowrap">
+            <p>Find a Gift</p>
+          </div>
+          <div className="whitespace-nowrap">
+            <p>Registry</p>
+          </div>
+          <div className="whitespace-nowrap">
+            <p>Gift Cards</p>
+          </div>
+          <div className="whitespace-nowrap">
+            <p>Amazon Basics</p>
+          </div>
+          <div className="whitespace-nowrap">
+            <p>Sell</p>
+          </div>
         </div>
       </header>
 
