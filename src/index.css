@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base{
+    *{
+        box-sizing: border-box;
+    }
+}
+
+@layer components{
+    .navBtns{
+        @apply text-white  text-[12px] lg:text-sm font-bold font-poppins hover:underline md:hover:outline md:hover:no-underline px-1 h-full cursor-pointer flex justify-center items-center
+    }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
