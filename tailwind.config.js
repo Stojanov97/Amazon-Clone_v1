@@ -13,6 +13,11 @@ export default {
           DEFAULT: "#131921",
         },
       },
+      outline: {
+        slim_wht: {
+          DEFAULT: "1px solid white",
+        },
+      },
     },
   },
   plugins: [],

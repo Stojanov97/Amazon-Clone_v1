@@ -10,7 +10,7 @@
 
 @layer components{
     .navBtns{
-        @apply text-white  text-[12px] lg:text-sm font-bold font-poppins hover:underline md:hover:outline md:hover:no-underline px-1 h-full cursor-pointer flex justify-center items-center
+        @apply text-white  text-[12px] lg:text-sm font-bold font-poppins outline-1 hover:underline md:hover:outline md:hover:no-underline px-1 h-full cursor-pointer flex justify-center items-center
     }
 }
 
