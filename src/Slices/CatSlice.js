@@ -5,7 +5,7 @@ const initialState = {
 };
 
 export const CatSlice = createSlice({
-  name: "Cat",
+  name: "cat",
   initialState,
   reducers: {
     changeSelection: (state, action) => {
@@ -15,5 +15,4 @@ export const CatSlice = createSlice({
 });
 
 export const { changeSelection } = CatSlice.actions;
-export const selectedSelection = (state) => state.CatSlice.selection;
 export default CatSlice.reducer;

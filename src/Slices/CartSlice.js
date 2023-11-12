@@ -5,7 +5,7 @@ const initialState = {
 };
 
 export const CartSlice = createSlice({
-  name: "Cart",
+  name: "cart",
   initialState,
   reducers: {
     addToCart: (state, action) => {
@@ -29,5 +29,4 @@ export const CartSlice = createSlice({
 });
 
 export const { addToCart, removeFromCart } = CartSlice.actions;
-export const selectedItems = (state) => state.basket.items;
 export default CartSlice.reducer;

@@ -5,7 +5,7 @@ import CatReducer from "../Slices/CatSlice";
 
 export const store = configureStore({
   reducer: {
-    Cart: CartReducer,
-    Cat: CatReducer,
+    cart: CartReducer,
+    cat: CatReducer,
   },
 });

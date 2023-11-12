@@ -8,7 +8,6 @@ const CarouselComp = () => {
   return (
     <>
       <Carousel
-        axis="horizontal"
         autoPlay
         interval={4000}
         infiniteLoop

@@ -7,16 +7,26 @@ import {
   MapPinIcon,
 } from "@heroicons/react/24/outline";
 import MyLocation from "../Hooks/useLocation";
+import { useSelector, useDispatch } from "react-redux";
+import { changeSelection } from "../Slices/CatSlice";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const categories = useFetch("https://fakestoreapi.com/products/categories");
   const { location } = MyLocation();
+  const categorySelected = useSelector((state) => state.cat.selection);
+  const cart = useSelector((state) => state.cart.items.length);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <header>
       {/* top part */}
       <div className="w-max-[1920px] lg:h-[60px] md:h-[50px] h-auto flex-wrap md:flex-nowrap bg-amazon_blue px-6 py-1 flex flex-shrink justify-around gap-3 md:gap-9 items-start">
         {/* logo */}
-        <div className=" mx-2 w-max-[120px] h-max-[60] navBtns">
+        <div
+          className=" mx-2 w-max-[120px] h-max-[60] navBtns"
+          onClick={() => navigate("/")}
+        >
           <img
             className="py-1 object-contain h-12"
             src="https://pngimg.com/d/amazon_PNG11.png"
@@ -36,13 +46,25 @@ const Header = () => {
         <div className="flex rounded-md md:h-[45px] h-full flex-grow overflow-hidden ">
           <select
             name="categories"
-            defaultValue={"all"}
+            defaultValue="electronics"
+            defaultChecked="electronics"
             id="categories"
             className="w-[50px] sm:w-auto p-2 cursor-pointer"
+            onChange={(e) => {
+              dispatch(changeSelection(e.target.value));
+            }}
           >
-            <option value="all">All</option>
+            <option value="all" id="all" name="all">
+              All
+            </option>
             {categories.response.map((category) => (
-              <option key={category} value={category}>
+              <option
+                selected={category === categorySelected ? true : false}
+                key={category}
+                id={category}
+                name={category}
+                value={category}
+              >
                 {category}
               </option>
             ))}
@@ -77,12 +99,13 @@ const Header = () => {
           <p>Orders & returns</p>
         </div>
         {/* Cart */}
-        <div className="navBtns">
+        <div className="navBtns" onClick={() => navigate("/cart")}>
+          {cart > 0 && <p>{cart}</p>}
           <ShoppingCartIcon className="w-7 h-7" />
         </div>
       </div>
       {/* bottom part */}
-      <div className="w-max-[1920px] p-1 flex items-center justify-start gap-7 h-[35px] text-white overflow-x-scroll lg:overflow-hidden flex-shrink-0   bg-amazon_blue-light">
+      <div className="w-max-[1920px] scrollbar-hide p-1 flex items-center justify-start gap-7 h-[35px]  text-white overflow-x-scroll lg:overflow-hidden flex-shrink-0   bg-amazon_blue-light">
         {/* all */}
         <div>
           <Bars4Icon className="w-7 h-7 navBtns" />
