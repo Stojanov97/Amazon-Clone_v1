@@ -46,8 +46,6 @@ const Header = () => {
         <div className="flex rounded-md md:h-[45px] h-full flex-grow overflow-hidden ">
           <select
             name="categories"
-            defaultValue="electronics"
-            defaultChecked="electronics"
             id="categories"
             className="w-[50px] sm:w-auto p-2 cursor-pointer"
             onChange={(e) => {
